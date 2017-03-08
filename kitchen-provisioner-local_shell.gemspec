@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "kitchen-provisioner-local_shell"
-  spec.version       = "0.0.1"
+  spec.version       = "0.1.0"
   spec.authors       = ["Masashi Terui"]
   spec.email         = ["marcy9114@gmail.com"]
   spec.summary       = %q{A Test-Kitchen Provisioner that execute some command from localhost.}

@@ -40,7 +40,7 @@ module Kitchen
 
       # (see Base#call)
       def call(state)
-        info("[#{name}] Provison on instance=#{instance} with state=#{state}")
+        debug("[#{name}] Provison on instance=#{instance} with state=#{state}")
         sleep_if_set
         merge_state_to_env(state)
         shellout
@@ -53,11 +53,11 @@ module Kitchen
       #
       # @api private
       def sleep_if_set
-        config[:sleep].to_i.times do
-          print "."
-          sleep 1
+        sleep_sec = config[:sleep].to_i
+        if sleep_sec > 0
+          info("Sleep #{config[:sleep]} seconds...")
+          sleep sleep_sec
         end
-        puts
       end
 
       def shellout
